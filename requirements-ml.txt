@@ -1,0 +1,4 @@
+# Optional model integrations used by /api/interpret-business and /api/visual-audit.
+# These packages can download large model/runtime files on first use.
+sentence-transformers>=3.0,<7.0
+ultralytics>=8.3,<9.0

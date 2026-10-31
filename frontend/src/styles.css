@@ -1,0 +1,142 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+  --font-serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-paper-deep: var(--paper-deep);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-foreground: var(--terracotta-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-map-competitor: var(--map-competitor);
+  --color-map-amenity: var(--map-amenity);
+  --color-map-transport: var(--map-transport);
+  --color-map-business: var(--map-business);
+  --color-chart-1: var(--primary);
+  --color-chart-2: var(--terracotta);
+  --color-chart-3: var(--muted-foreground);
+  --color-chart-4: var(--success);
+  --color-chart-5: var(--warning);
+  --color-sidebar: var(--background);
+  --color-sidebar-foreground: var(--foreground);
+  --color-sidebar-primary: var(--primary);
+  --color-sidebar-primary-foreground: var(--primary-foreground);
+  --color-sidebar-accent: var(--accent);
+  --color-sidebar-accent-foreground: var(--accent-foreground);
+  --color-sidebar-border: var(--border);
+  --color-sidebar-ring: var(--ring);
+}
+
+:root {
+  --radius: 0.25rem;
+  /* #F5F4EF paper */
+  --background: oklch(0.966 0.006 98);
+  --paper-deep: oklch(0.938 0.008 95);
+  /* #24272B graphite */
+  --foreground: oklch(0.267 0.008 248);
+  --card: oklch(0.982 0.004 98);
+  --card-foreground: oklch(0.267 0.008 248);
+  --popover: oklch(0.982 0.004 98);
+  --popover-foreground: oklch(0.267 0.008 248);
+  /* #42677D slate blue */
+  --primary: oklch(0.497 0.05 233);
+  --primary-foreground: oklch(0.982 0.004 98);
+  --secondary: oklch(0.938 0.008 95);
+  --secondary-foreground: oklch(0.267 0.008 248);
+  /* #B5664B terracotta */
+  --terracotta: oklch(0.6 0.105 40);
+  --terracotta-foreground: oklch(0.982 0.004 98);
+  --muted: oklch(0.938 0.008 95);
+  /* #73767A grey (slightly darkened for contrast) */
+  --muted-foreground: oklch(0.52 0.006 248);
+  --accent: oklch(0.925 0.012 233);
+  --accent-foreground: oklch(0.267 0.008 248);
+  --destructive: oklch(0.52 0.17 27);
+  --destructive-foreground: oklch(0.982 0.004 98);
+  --success: oklch(0.5 0.1 150);
+  --warning: oklch(0.58 0.12 70);
+  /* #D9D8D1 stone */
+  --border: oklch(0.876 0.008 98);
+  --input: oklch(0.876 0.008 98);
+  --ring: oklch(0.497 0.05 233);
+  --map-competitor: oklch(0.6 0.105 40);
+  --map-amenity: oklch(0.497 0.05 233);
+  --map-transport: oklch(0.36 0.01 248);
+  --map-business: oklch(0.62 0.04 120);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+  html {
+    font-family: var(--font-sans);
+  }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    overflow-wrap: anywhere;
+  }
+  ::selection {
+    background: var(--color-accent);
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+@utility contour-bg {
+  background-image:
+    repeating-radial-gradient(circle at 70% 40%, transparent 0 22px, color-mix(in oklab, var(--color-border) 70%, transparent) 22px 23px);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white;
+  }
+}

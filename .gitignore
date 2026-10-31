@@ -1,0 +1,50 @@
+# Secrets and local environment files
+.env
+.env.*
+!.env.example
+frontend/.env.local
+frontend/.env.*.local
+!frontend/.env.local.example
+
+# Python
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local databases and data
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.parquet
+
+# Node / frontend build outputs
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.output/
+frontend/.tanstack/
+frontend/.vite/
+
+# ML weights and caches
+*.pt
+*.pth
+*.onnx
+*.safetensors
+.cache/
+.huggingface/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+*.log
